@@ -1,0 +1,18 @@
+from apps.users.models import *
+
+users.objects.all()  // retrieve all users
+
+users.objects.last() // get the last users
+
+users.objects.create(first_name = "Brian", last_name = "Ho", email_address = "hello@gmail.com", age=23 )  // create values
+
+users.objects.create(first_name = "Mike", last_name = "Jason", email_address = "GG@mail.com", age = 21 )
+
+
+
+b = users.objects.get(id = 3) // find the users in id = 3
+b.last_name = "Cooper" // change the last_name 
+b.save() // save the change to the database
+
+
+users.objects.get(id= 4).delete() // delete the data in id = 4

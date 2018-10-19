@@ -1,0 +1,62 @@
+ User.objects.create(first_name = "Brian", last_name = "Ho", email = "Hello@gmail.com")
+<User: User object>
+ User.objects.create(first_name = "Ryan", last_name = "Anderson", email = "RAS@gmail.com")
+<User: User object>
+ User.objects.create(first_name = "Chris", last_name = "Lee", email = "CL@gmail.com")
+<User: User object>
+
+
+
+ this_user = User.objects.get(id = 1)
+ Book.objects.create(name="Ocean", desc="asdadaw",Uploader = this_user)
+<Book: Book object>
+ Book.objects.create(name="Sun", desc="asasdwfvsvsw",Uploader = this_user)
+<Book: Book object>
+ this_user = User.objects.get(id = 2)
+ Book.objects.create(name="Ghost", desc="ghost",Uploader = this_user)
+<Book: Book object>
+ Book.objects.create(name="2035", desc="2035",Uploader = this_user)
+<Book: Book object>
+
+
+this_user = User.objects.get(id = 1)
+this_book = Book.objects.first()
+this_book.book_likes.add(this_user)
+
+this_user = User.objects.get(id = 1)
+this_book = Book.objects.last()
+this_book.book_likes.add(this_user)
+
+this_book = Book.objects.first()
+this_user = User.objects.get(id = 2)
+this_book.book_likes.add(this_user)
+
+this_user = User.objects.get(id = 2)
+this_book = Book.objects.get(id = 3)
+this_book.book_likes.add(this_user)
+
+
+this_book = Book.objects.first()
+this_book.book_likes.add(this_user)
+this_book = Book.objects.get(id = 2)
+this_book.book_likes.add(this_user)
+this_book = Book.objects.get(id = 3)
+this_book.book_likes.add(this_user)
+this_book = Book.objects.get(id = 4)
+this_book.book_likes.add(this_user)
+this_book = Book.objects.get(id = 5)
+this_book.book_likes.add(this_user)
+this_book = Book.objects.get(id = 6)
+this_book.book_likes.add(this_user)
+
+
+
+Book.objects.get(id = 1).book_likes.values()
+
+
+Book.objects.get(id = 1).Uploader.__dict__
+
+
+Book.objects.get(id = 2).book_likes.values()
+
+Book.objects.get(id = 2).Uploader.__dict__
